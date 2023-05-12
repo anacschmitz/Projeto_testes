@@ -47,10 +47,26 @@ public class Componentes {
     }
 
     public void testarTextField(){
-        driver.findElement(By.id("elementosForm:nome")).sendKeys("Batatinha");
+        driver.findElement(By.id("elementosForm:sugestoes")).sendKeys("Batatinha\nBatatinha");
+//        driver.findElement(By.name("q")).sendKeys(Keys.ENTER);
     }
 
     public void validarTextField(){
-        Assert.assertEquals("Batatinha", driver.findElement(By.id("elementosForm:nome")).getAttribute("value"));
+        Assert.assertEquals("Batatinha\nBatatinha", driver.findElement(By.id("elementosForm:sugestoes")).getAttribute("value"));
+    }
+
+    public void testarRadioButton(){
+        driver.findElement(By.id("elementosForm:sexo:1")).click();
+    }
+
+    public void validarRadioButton(){
+        Assert.assertTrue(driver.findElement(By.id("elementosForm:sexo:1")).isSelected());
+    }
+
+    public void testarCheckBox(){
+        driver.findElement(By.id("elementosForm:comidaFavorita:1")).click();
+    }
+    public void validarCheckBox(){
+        Assert.assertTrue(driver.findElement(By.id("elementosForm:comidaFavorita:1")).isSelected());
     }
 }

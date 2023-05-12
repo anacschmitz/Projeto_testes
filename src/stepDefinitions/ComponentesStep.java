@@ -13,14 +13,34 @@ public class ComponentesStep {
         componentes.inicializarHtml();
     }
 
-    @Quando("o usuário digitar Batatinha")
-    public void o_usuário_digitar_Batatinha() {
+    @Quando("o usuário digitar Batatinha Batatinha")
+    public void o_usuário_digitar_Batatinha_Batatinha() {
         componentes.testarTextField();
-
     }
 
-    @Então("no campo textfield deve apresentar a palavra Batatinha")
-    public void no_campo_textfield_deve_apresentar_a_palavra_Batatinha() {
+    @Então("no campo textfield deve apresentar as palavras Batatinha Batatinha")
+    public void o_usuário_digitar_a_palavra_Batatinha_Batatinha() {
         componentes.validarTextField();
     }
+
+    @Quando("o usuário clicar no elemento rádio Button")
+    public void o_usuário_clicar_no_elemento_rádio_Button() {
+        componentes.testarRadioButton();
+    }
+
+    @Então("o elemento rádio button deve aparecer selecionado")
+    public void o_elemento_rádio_button_deve_aparecer_selecionado() {
+        componentes.validarRadioButton();
+    }
+
+    @Quando("o usuário clicar no elemento checkbox")
+    public void o_usuário_clicar_no_elemento_checkbox() {
+        componentes.testarCheckBox();
+    }
+
+    @Então("o elemento checkbox deve aparecer selecionado")
+    public void o_elemento_check_box_deve_aparecer_selecionado() {
+        componentes.validarCheckBox();
+    }
+
 }
